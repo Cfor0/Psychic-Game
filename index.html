@@ -10,7 +10,7 @@
 
 <body>
     <h1> Psychic Game</h1>
-    <p>Guess what letter I'm thinking of</p>
+    <h2>Guess what letter I'm thinking of</h2>
     <p id="win">Wins:</p>
     <p id="loss">Losses:</p>
     <p id="userGuessText">Your Guesses so far:</p>
@@ -26,7 +26,7 @@
         var win = document.getElementById("win");
         var loss = document.getElementById("loss");
         var userGuess = document.getElementById("userGuessText");
-
+        var userGUessString = "";
 
 
         document.onkeyup = function (event) {
@@ -35,7 +35,7 @@
             console.log(computerGuess);
             if (userGuess === computerGuess) {
                 wins++;
-                alreadyGuessed = [];
+                userGuess = [];
                 guessesLeft = 10;
             }
             else {
@@ -44,11 +44,12 @@
             if (guessesLeft === 0) {
                 losses++;
                 guessesLeft = 10;
-                alreadyGuessed = [];
+                userGuess = [];
             }
             win.textContent = "Wins: " + wins;
             loss.textContent = "Losses: " + losses;
-            userGuessText.textContent = "Your Guesses so far: " + userGuess;
+            userGUessString += userGuess
+            userGuessText.textContent = "Your Guesses so far: " + userGUessString;
             guessesText.textContent = "Guesses left: " + guessesLeft;
 
         }
