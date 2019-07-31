@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> Psychic Game</h1>
+    <p>Guess what letter I'm thinking of</p>
+    <p id="win">Wins:</p>
+    <p id="loss">Losses:</p>
+    <p id="userGuessText">Your Guesses so far:</p>
+    <p id="guessesText">Guesses left:</p>
+
+    <script type="text/javascript">
+
+        var wins = 0;
+        var losses = 0;
+        var guessesLeft = 10;
+        var guessesLeft = document.getElementById("guessesText");
+        var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+        var win = document.getElementById("win");
+        var loss = document.getElementById("loss");
+        var userGuess = document.getElementById("userGuessText");
+
+
+
+        document.onkeyup = function (event) {
+            var userGuess = event.key;
+            var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+            console.log(computerGuess);
+            if (userGuess === computerGuess) {
+                wins++;
+                alreadyGuessed = [];
+                guessesLeft = 10;
+            }
+            else {
+                guessesLeft--;
+            }
+            if (guessesLeft === 0) {
+                losses++;
+                guessesLeft = 10;
+                alreadyGuessed = [];
+            }
+            win.textContent = "Wins: " + wins;
+            loss.textContent = "Losses: " + losses;
+            userGuessText.textContent = "Your Guesses so far: " + userGuess;
+            guessesText.textContent = "Guesses left: " + guessesLeft;
+
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>
