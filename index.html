@@ -33,7 +33,7 @@
             var userGuess = event.key;
             var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
             console.log(computerGuess);
-            console.log(guessesLeft);
+            
             // makes it not repeat userGUessString
             if (userGUessString.includes(userGuess)) {
                 return
@@ -50,6 +50,7 @@
             else {
                 guessesLeft--;
             }
+            //loss trigger
             if (guessesLeft === 0) {
                 losses++;
                 guessesLeft = 10;
@@ -57,7 +58,7 @@
                 userGUessString = "";
             }
 
-
+            //shows text in html
             win.textContent = "Wins: " + wins;
             loss.textContent = "Losses: " + losses;
             userGUessString += userGuess
