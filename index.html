@@ -5,16 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Psychic Game</title>
 </head>
 
-<body>
-    <h1> Psychic Game</h1>
-    <h2>Guess what letter I'm thinking of</h2>
-    <p id="win">Wins:</p>
-    <p id="loss">Losses:</p>
-    <p id="userGuessText">Your Guesses so far:</p>
-    <p id="guessesText">Guesses left:</p>
+<body id="body">
+    <h1 class="mx-5 text-center font-weight-bold"> Psychic Game</h1>
+    <h2 class="mx-5 text-center font-italic">Guess What Letter I'm Thinking of...</h2>
+    <p id="win" class="mx-5 mt-3">Wins:</p>
+    <p id="loss" class="mx-5">Losses:</p>
+    <p id="userGuessText" class="mx-5">Your Guesses so far:</p>
+    <p id="guessesText" class="mx-5">Guesses left:</p>
 
     <script type="text/javascript">
 
@@ -33,7 +36,7 @@
             var userGuess = event.key;
             var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
             console.log(computerGuess);
-            
+
             // makes it not repeat userGUessString
             if (userGUessString.includes(userGuess)) {
                 return
