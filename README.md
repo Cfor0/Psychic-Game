@@ -1,4 +1,4 @@
-# Psychic-Game
+# [Psychic-Game](https://cfor0.github.io/Psychic-Game/)
 
 Objective of this app is to press a letter and see if that is the letter the computer was thinking. Each guess is displayed on the browser and resets if user guessed correctly or user ran out of attempts.
 
